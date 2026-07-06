@@ -1,0 +1,39 @@
+# ====================================================================
+# Pandoc + WeasyPrint Workflow Gitignore
+# ====================================================================
+
+# --- Build Outputs ---
+# Ignore the generated intermediary HTML and the final production PDFs
+*.html
+*.pdf
+
+# Exception: If you have static source HTML files you *want* to track,
+# uncomment the next line to only ignore the specific build targets:
+# !source_file.html
+
+# --- WeasyPrint & System Logs ---
+# Ignore compilation logs, font caches, or temporary execution dumps
+*.log
+.weasyprint*
+
+# --- Linux / OS Specific Garbage ---
+# Ignore thumbnail caches and directory configuration files
+.DS_Store
+.directory
+.Trash/
+Thumbs.db
+
+# --- Editor & IDE Configurations ---
+# VS Code local workspace settings (retains project extensions/tasks if needed)
+.vscode/
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Typora / Obsidian local state folders
+.typora/
+.obsidian/
+
+# Vim / Emacs swap and backup files
+*~
+*.swp
+*.swo

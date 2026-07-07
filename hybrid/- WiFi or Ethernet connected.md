@@ -1,8 +1,0 @@
-- WiFi or Ethernet connected
-- Data from ASHP heat meter
-- Data from ASHP electric meter 
-- Data from Gas heat meter 
-- Data from Grid CT Meter (whole house consumption)
-- Data from Water Meter 
-- Check Cloud is connected 
-- Take photos of installation showing position of heat meters 

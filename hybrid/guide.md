@@ -1,6 +1,6 @@
 ---
 title: " OpenEnergyMonitor Hybrid Heat Pump Monitoring"
-author: "Installation & Setup Guide | V0.9 July 2026"
+author: "Installation & Setup Guide | V0.9.1 July 2026"
 #date: "July 2026"
 ---
 
@@ -23,7 +23,7 @@ author: "Installation & Setup Guide | V0.9 July 2026"
 
 ![Fig 1: System overview](images/system-overview.png){width=80%}
 
-![Fig 2: Hardware overview - See manufacturer specific schematic for specific meter locations](images/meter-overview.png){width=80%}
+![Fig 2: Hardware overview - See Appendix B for annotated manufacturer schematics for specific meter locations](images/meter-overview.png){width=80%}
 
 <div class="page-break"></div>
 
@@ -56,7 +56,7 @@ author: "Installation & Setup Guide | V0.9 July 2026"
 * 🪱 **No straight pipe required:** There is no requirement for a straight pipe length before or after the meter.
 * 🔄 **Orientation:** Install the meter in one of the approved orientations shown below:
 
-![Fig 4: Recommended water meter installation](images/water-meter-install.png){width=40%}
+![Fig 4: Recommended water meter installation](images/water-meter-install.png){width=30%}
 
 * 🔌 **M-Bus Connection:** Connect the M-Bus data two-wire connection (see the wiring section below)
 
@@ -78,37 +78,36 @@ author: "Installation & Setup Guide | V0.9 July 2026"
 
 * 🥇 **1st Electricity Meter (SDM120):** This meter must be installed **in-line** on the electrical circuit directly feeding the ASHP (Air Source Heat Pump).
     * 🔧 **Torque Spec:** The power terminals must be torqued to **1.5 Nm**.
-    * ⬇️ **Wiring Diagram:** See below.
+    * 🔌 **Wiring Diagram:** See below.
 
-<!-- ![Fig 6: ASHP in-line SDM120 electric Meter connections](images/sdm120.png){width=40%} -->
+![Fig 6: ASHP in-line SDM120 electric Meter connections](images/sdm120-ashp.png){width=48%}
 
-![Fig 6: ASHP in-line SDM120 electric Meter connections](images/sdm120-alt.png){width=48%}
-
-* 🥈 **2nd Electricity Meter (SDM120CT):** This meter is used to monitor the main grid supply to the property via a clip-on CT (Current Transformer) sensor.
+* 🏠 **2nd Electricity Meter (SDM120CT):** This meter is used to monitor the main grid supply to the property via a clip-on CT (Current Transformer) sensor.
     * 🟫 **Live Conductor:** The CT must be clipped around only the Live meter tail after the utility meter, before any Henley blocks 
     * ➡️ **CT Orientation:** Ensure the arrow printed on the CT sensor points **towards the house (load) side**.
     * ⚡ **Power Supply:** The SDM120CT meter requires a **240V supply** e.g fused spur or low rated circuit breaker: 
         * 🟦 **Neutral:** Terminal 3
         * 🟫 **Live:** Terminal 4
 
- > ⚠️ **IMPORTANT:** These meters require suitable DIN enclosures 
+ > ⚠️ **IMPORTANT:** Electric meters require suitable DIN enclosures 
 
 
 # 🌐 Modbus (RS485) Data Wiring
 
 * 💻 **Adapter Connection:** The **RS485 Modbus to USB adapter** should be plugged into the **emonHP** using the supplied USB extension cable.
+* 🔌 **Wiring:** See Fig 6 above
 * 🧵 **Cabling Specifications:** For short runs, 3-core flexible cable can be used. For long runs, we recommend using shielded cable, such as CAT5 shielded.
 * ⚠️ **Mains separation**: The Modbus data cable should must be physically separated from 240V AC power cables by a **minimum of 50mm** when running parallel to avoid data corruption and electrical interference.
 
 
 # 🌡️Wireless Indoor Temperature Sensor  
 
+The **emonTH** wireless indoor sensor transmits temperature data to the emonHP via low-power 433Mhz RF.
+
 - 🔋 **Insert batteries:** 2x AA supplied 
 - 🔄 **Automatic pairing:** the sensor is pre-paired with the emonHP base-station 
 - 🏠 **Location:** Place sensor in the main living space e.g living room 
 - 🛜 **RF Range:** Ensure sensor is no more than 50m away from emonHP base-station
-
----
 
 
 <div class="page-break"></div>
@@ -173,9 +172,7 @@ Before leaving site, check the following meter data should be updating every 10s
 
 <div class="page-break"></div>
 
-# 📕 Appendix A 
-
-## 💨 Removing Air
+# 📕 Appendix A: Removing Air
 
 
 *Removing trapped and dissolved air from a sealed heating system is essential for maintaining efficiency, ensuring accurate heat meter readings, and prolonging the system's lifespan by minimizing corrosion.*
@@ -183,9 +180,6 @@ Before leaving site, check the following meter data should be updating every 10s
 Ultrasonic heat meters, such as Kamstrup, Axioma, and Sharky, are unable to measure flow rates accurately if there is air in the system. This can cause the flow rate to be reported as zero, resulting in the heat meter showing no heat being measured. This issue is most likely to occur towards the end of a Domestic Hot Water (DHW) cycle when the flow temperature is highest:
 
 ![Fig 1: Example air error](images/air.png)
-
-Sontex heat meters, on the other hand, use a different flow measurement principle. While they do not produce an error or stop reporting in the same way as ultrasonic meters, they may quietly underreport if air is present. Additionally, Sontex heat meters are susceptible to dirt accumulation and may gradually underreport over time if they become clogged with debris.
-
 
 #### During Design / Installation
 
@@ -218,7 +212,7 @@ Follow these steps to ensure all air is effectively purged from the system:
 - **Close the AAVs:** Once commissioning is complete, close the AAVs.
 - **Customer Advice:** Advise the customer to periodically open the AAVs and attempt to bleed the highest radiators during the first few months of operation to ensure any residual air is removed.
 
-#### Troubleshooting
+#### Air Troubleshooting
 
 - **Consider using a vacuum degasser:** This equipment is commonly used to remove air from commercial heating systems.
 - **Consider filling with demineralised water:** Ensure the correct pH for your system. This has lower conductivity and will prevent hydrogen release. See: [Heating Water Treatment Explained (VDI 2035)](https://www.heatgeek.com/heating-water-treatment-explained-vdi-2035).
@@ -227,10 +221,23 @@ Follow these steps to ensure all air is effectively purged from the system:
 
 The above guidance was written by OpenEnergyMonitor in collaboration with [Heat Geek](https://www.heatgeek.com/) and [MeterPoint](https://meterpoint.com/).
 
-We’d love to hear from you! If you have any suggestions, tips, or feedback on the best methods for removing air from heating systems, please reach out.
+<div class="page-break"></div>
 
-***
+# 📗 Appendix B: Annotated Manufacturer Schematics
 
-[1]: On a Vaillant Arothem+ the purge cycle setting is available on the VWZ AI controller under settings: "Installer Level (code 17) > Test Menu > Check Programmes > P.06 Purge Building Circuit".
+#### Alpha
 
-[2]: There are various methods to force a heat pump to run at max output. Some units have a test program, while others need to be set to either max fixed-flow temperature or set weather compensation and indoor set point set to maximum. You may also need to adjust the Outside Threshold (OT) temperature to force the HP to run at maximum even if it’s hot outside. Another method is to trigger a DHW cycle with the diverter valve unplugged and Eco mode disabled to force the HP to output maximum temperature into the heating circuit.
+![](images/alpha.png)
+
+<div class="page-break"></div>
+
+#### Warmflow
+
+![](images/warmflow.png)
+
+<div class="page-break"></div>
+
+#### Vaillant
+
+![](images/vaillant.png)
+

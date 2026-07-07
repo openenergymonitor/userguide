@@ -1,0 +1,46 @@
+@page {
+  size: A5 portrait;
+  margin-top: 20mm;
+  margin-bottom: 20mm;
+  
+  /* Running footer for page numbers */
+  @bottom-center {
+    content: counter(page);
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+  }
+}
+
+/* Adjust margins for printing double-sided (Duplex) */
+@page :left {
+  margin-left: 20mm;  /* Gutter space for the fold */
+  margin-right: 12mm;
+}
+
+@page :right {
+  margin-left: 12mm;
+  margin-right: 20mm; /* Gutter space for the fold */
+}
+
+/* Isolate the cover page */
+@page :first {
+  margin: 0; /* Clear margins if you have a full-bleed graphic cover */
+  @bottom-center { content: normal; } /* Remove page number on cover */
+}
+
+/* General Layout Elements */
+body {
+  font-family: "Georgia", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #222;
+}
+
+h1, h2 {
+  font-family: Arial, sans-serif;
+  page-break-after: avoid;
+}
+
+.chapter {
+  page-break-before: always;
+}

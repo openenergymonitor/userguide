@@ -1,6 +1,6 @@
 ---
 title: " OpenEnergyMonitor Hybrid Heat Pump Monitoring"
-author: "Installation & Setup Guide | V1.0 July 2026"
+author: "Installation & Setup Guide | V0.9 July 2026"
 #date: "July 2026"
 ---
 
@@ -156,18 +156,19 @@ If the  Wi-Fi network settings have changed (e.g after installing a new router),
 
 # ✅ Commissioning Checklist  
 
-Before leaving site, check the following. The meter data should be updating every 10s:
+Before leaving site, check the following meter data should be updating every 10s:
 
-| Step | Check | Expected Result | Tick
+| Step | Check | Expected Result | Tick?
 |-|--------|-----------------|-----|
 | 1    | emonHP is connected to **WiFi or Ethernet**, WiFi should be > 40% | ![](images/connection-status.png){width=80%} |  |
-| 2    | Data from **ASHP heat meter 1**| ![](images/heat-hp.png){width=60%}|  |
-| 3    | Data from **ASHP electric meter** | ![](images/elec-hp.png){width=60%}| |  |
-| 4    | Data from **Boiler heat meter 2**| ![](images/boiler.png){width=60%} |  |
-| 5    | Data from **Grid Meter** Clip-on CT (whole house) | ![](images/grid.png){width=60%} |  |
-| 6    | Data from **Water Meter** (DHW) | ![](images/water.png){width=60%} |  |
-| 7    | Check **Cloud Connected** | ![](images/web.png){width=60%} |  |
-| 7    | Take **photos**   | Showing installation as a whole, position of heat meters outdoor unit & pipework  |  |
+| 2    | Data from **ASHP heat meter 1**| ![](images/heat-hp.png){width=40%}|  |
+| 3    | Data from **ASHP electric meter** | ![](images/elec-hp.png){width=40%}| |  |
+| 4    | Data from **Boiler heat meter 2**| ![](images/boiler.png){width=40%} |  |
+| 5    | Data from **Grid Meter** Clip-on CT (whole house) | ![](images/grid.png){width=40%} |  |
+| 6    | Data from **Water Meter** (DHW) | ![](images/water.png){width=40%} |  |
+| 7    | Check **Cloud Connected** | ![](images/web.png){width=40%} |  |
+| 8    | Take **photos**   | Showing installation as a whole, position of heat meters outdoor unit & pipework  |  |
+| 9    | Scan **QR code**   | Scanning the QR code on the emonHP should show the monitoring dashboard with data updating   |  |
 
 
 <div class="page-break"></div>

@@ -6,7 +6,7 @@ For Ubuntu/Debian based systems
 
 ```
 sudo apt update
-sudo apt install pandoc weasyprint python3-pip
+sudo apt install pandoc weasyprint python3-pip texlive-extra-utils
 ```
 
 Optional: Install a live previewer like VS Code or Typora

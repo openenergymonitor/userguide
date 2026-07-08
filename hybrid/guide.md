@@ -181,7 +181,7 @@ Ultrasonic heat meters, such as Kamstrup, Axioma, and Sharky, are unable to meas
 
 ![Fig 1: Example air error](images/air.png)
 
-#### During Design / Installation
+**During Design / Installation**
 
 To maximize the effectiveness of air removal:
 
@@ -189,7 +189,7 @@ To maximize the effectiveness of air removal:
 - **Fit a Deaerator:** Install a deaerator such as a Spirovent on the primary flow line, ideally before the circulator pump.
 - **Avoid Dead Legs:** Design pipework to eliminate dead legs and avoid creating areas where air could become trapped.
 
-#### During Commissioning
+**During Commissioning**
 
 Follow these steps to ensure all air is effectively purged from the system:
 
@@ -207,19 +207,15 @@ Follow these steps to ensure all air is effectively purged from the system:
    - **Run for 1 Hour:** Operate the system at maximum temperature for about an hour with AAVs open.
    - **Restore Working Pressure:** Top the pressure back up to the normal working range of 1.5-2 bar.
 
-#### After Commissioning
+**After Commissioning**
 
 - **Close the AAVs:** Once commissioning is complete, close the AAVs.
 - **Customer Advice:** Advise the customer to periodically open the AAVs and attempt to bleed the highest radiators during the first few months of operation to ensure any residual air is removed.
 
-#### Air Troubleshooting
+**Air Troubleshooting**
 
-- **Consider using a vacuum degasser:** This equipment is commonly used to remove air from commercial heating systems.
 - **Consider filling with demineralised water:** Ensure the correct pH for your system. This has lower conductivity and will prevent hydrogen release. See: [Heating Water Treatment Explained (VDI 2035)](https://www.heatgeek.com/heating-water-treatment-explained-vdi-2035).
 
-#### About this Guidance
-
-The above guidance was written by OpenEnergyMonitor in collaboration with [Heat Geek](https://www.heatgeek.com/) and [MeterPoint](https://meterpoint.com/).
 
 <div class="page-break"></div>
 

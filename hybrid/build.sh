@@ -20,11 +20,11 @@ if [ "$MODE" = "--book" ]; then
     pdfseparate user_guide.pdf page-%d.pdf 2> /dev/null
  
 
-    echo "2. Unite just pages 1 through 12 into your booklet source.."
-    pdfunite page-{1..12}.pdf booklet_source.pdf 2> /dev/null
+    echo "2. Unite just pages 1 through 13 into your booklet source.."
+    pdfunite page-{1..13}.pdf booklet_source.pdf 2> /dev/null
 
-    echo "3. Unite pages 13 through 15 into the trailing section.."
-    pdfunite page-{13..15}.pdf appendixB.pdf 2> /dev/null
+    echo "3. Unite pages 14 through 16 into the trailing section.."
+    pdfunite page-{14..16}.pdf appendixB.pdf 2> /dev/null
 
     echo "4. Create book using pdfbook2.."
     pdfbook2 --short-edge booklet_source.pdf 

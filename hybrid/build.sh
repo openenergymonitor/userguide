@@ -9,16 +9,23 @@ pandoc guide.md -o guide.html --css=style.css --embed-resources --standalone --t
 echo "HTML successfully generated!"
 
 # Convert HTML to PDF using WeasyPrint
-weasyprint guide.html user_guide.pdf 2> /dev/null
+weasyprint guide.html hybrid.pdf 2> /dev/null
 echo "PDF successfully generated!"
+echo "Compressing PDF using ocrmypdf.."
+ocrmypdf --skip-text --output-type pdf --optimize 2 hybrid.pdf hybrid_compressed.pdf
 
 
 # Only run the booklet conversion if --book is passed as an argument
 if [ "$MODE" = "--book" ]; then
-    pdfbook2 --short-edge user_guide.pdf 
-    # echo "Creating booklet layout..."
+    pdfbook2 --short-edge hybrid.pdf 
+    echo "Booklet successfully generated!"
+    echo "Compressing booklet PDF using ocrmypdf.."
+    ocrmypdf --skip-text --output-type pdf --optimize 2 hybrid-book.pdf hybrid-book_compressed.pdf
+
+   
+    # echo "Creating booklet layout... with last 3 pages as A4"
     # echo "1. Separate ALL pages into individual files (page-1.pdf, page-2.pdf, etc.)"
-    # pdfseparate user_guide.pdf page-%d.pdf 2> /dev/null
+    # pdfseparate hybrid.pdf page-%d.pdf 2> /dev/null
  
 
     # echo "2. Unite just pages 1 through 13 into your booklet source.."
@@ -36,7 +43,7 @@ if [ "$MODE" = "--book" ]; then
     # echo "6. Clean up the temporary individual page files.."
     # rm page-*.pdf booklet_source.pdf appendixB.pdf booklet_source-book.pdf
     
-    echo "Booklet successfully generated! Print 'final_output-book.pdf' with double-sided printing and short edges."
+    echo "Booklet successfully generated! Print with double-sided printing and short edges."
 else
     echo "Standard PDF generated. Skipping booklet creation (run with '--book' to generate booklet)."
 fi

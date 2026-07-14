@@ -4,8 +4,7 @@
 MODE="$1"
 
 # Convert Markdown to HTML
-# pandoc guide.md -o guide.html --css=style.css --self-contained --toc
-pandoc guide.md -o guide.html --css=style.css --embed-resources --standalone --toc
+pandoc guide.md -o guide.html --css=style.css --standalone --toc
 echo "HTML successfully generated!"
 
 # Convert HTML to PDF using WeasyPrint
